@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website/main.dart';
 import 'package:website/widgets/page_switch_buttons.dart';
+import 'package:website/widgets/socials_buttons.dart';
 
 class SocialsPage extends StatelessWidget {
   const SocialsPage({super.key});
@@ -13,10 +14,10 @@ class SocialsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: Flexible(
-              flex: 2,
+          Flexible(
+            flex: 2,
+            child: Align(
+              alignment: Alignment.topLeft,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,6 +30,21 @@ class SocialsPage extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+          Flexible(
+              flex: 8,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                      const SocialsButtons(buttonText: "Discord"),
+                      SizedBox(height: screenheight! * 0.05,),
+                      const SocialsButtons(buttonText: "Steam"),
+                      SizedBox(height: screenheight! * 0.05,),
+                      const SocialsButtons(buttonText: "GitHub"),
+                    ],
+                ),
+              )
           ),
         ],
       ),
