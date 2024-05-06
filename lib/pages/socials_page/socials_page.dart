@@ -33,17 +33,37 @@ class SocialsPage extends StatelessWidget {
           ),
           Flexible(
               flex: 8,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                      const SocialsButtons(buttonText: "Discord"),
-                      SizedBox(height: screenheight! * 0.05,),
-                      const SocialsButtons(buttonText: "Steam"),
-                      SizedBox(height: screenheight! * 0.05,),
-                      const SocialsButtons(buttonText: "GitHub"),
-                    ],
-                ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: -400,
+                    right: 0,
+                    top: screenheight! / 2 - 200,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                          const SocialsButtons(buttonText: "Discord"),
+                          SizedBox(height: screenheight! * 0.05,),
+                          const SocialsButtons(buttonText: "Steam"),
+                          SizedBox(height: screenheight! * 0.05,),
+                          const SocialsButtons(buttonText: "GitHub"),
+                        ],
+                    ),
+                  ),
+                  Positioned(
+                      bottom: 10,
+                      left: -50,
+                      right: 0,
+                      child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: SizedBox(width: screenwidth! * 0.2, child: const Text("Made with ♥️ using Flutter", style: TextStyle(
+                            fontFamily: "Jetbrains-Mono",
+                            color: Colors.white38,
+                            fontSize: 15,
+                          ),),)
+                      )
+                  )
+                ],
               )
           ),
         ],
