@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website/main.dart';
 import 'package:website/misc/get_image_path.dart';
+import 'package:website/misc/open_url.dart';
 
 class SocialsButtons extends StatefulWidget {
   final String buttonText;
@@ -17,7 +18,7 @@ class _SocialsButtonsState extends State<SocialsButtons> {
     return SizedBox(
       width: screenwidth! * 0.2,
       child: InkWell(
-        onTap: () => null,
+        onTap: (){openUrl(widget.buttonText);},
         onHover: (hover){
           setState(() {
             isHovering = hover;
