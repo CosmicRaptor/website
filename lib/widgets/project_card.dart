@@ -28,7 +28,7 @@ class _ProjectCardState extends State<ProjectCard> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.ease,
-          padding: EdgeInsets.all(isHovering ? 35 : 20),
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
