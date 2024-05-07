@@ -25,7 +25,7 @@ class _LandingPageState extends State<LandingPage> {
         //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Flexible(
-            flex: 2,
+            flex: 1,
             child: Align(
               alignment: Alignment.topLeft,
               child: Column(
@@ -42,7 +42,7 @@ class _LandingPageState extends State<LandingPage> {
             ),
           ),
           Flexible(
-            flex: 9,
+            flex: 10,
             child: Align(
               alignment: Alignment.center,
               child: Stack(

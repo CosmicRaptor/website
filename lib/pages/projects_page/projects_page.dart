@@ -17,7 +17,7 @@ class ProjectsPage extends StatelessWidget {
         //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Flexible(
-            flex: 2,
+            flex: 1,
             child: Align(
               alignment: Alignment.topLeft,
               child: Column(
@@ -34,13 +34,13 @@ class ProjectsPage extends StatelessWidget {
             ),
           ),
           Flexible(
-            flex: 8,
+            flex: 10,
               child: Stack(
                 children: [
                   Positioned(
                     left: 0,
-                    right: 100,
-                    top: screenheight! /2 - 300,
+                    right: 0,
+                    top: screenheight! /2 - 400,
                     child: Column(
                       children: [
                         const Text("My Projects", style: TextStyle(
