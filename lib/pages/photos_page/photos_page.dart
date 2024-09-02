@@ -33,6 +33,8 @@ class _PhotosPageState extends State<PhotosPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenwidth = MediaQuery.of(context).size.width;
+    final double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Row(

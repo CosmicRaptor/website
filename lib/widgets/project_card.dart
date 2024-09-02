@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:website/main.dart';
 
 class ProjectCard extends StatefulWidget {
+
   final String title, description, url;
   const ProjectCard({super.key, required this.title, required this.description, required this.url});
 
@@ -11,11 +12,14 @@ class ProjectCard extends StatefulWidget {
 }
 
 class _ProjectCardState extends State<ProjectCard> {
+
   bool isHovering = false;
-  final double width = screenwidth! * 0.2;
 
   @override
   Widget build(BuildContext context) {
+    final double screenwidth = MediaQuery.of(context).size.width;
+    final double screenheight = MediaQuery.of(context).size.height;
+    final double width = screenwidth! * 0.2;
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: InkWell(

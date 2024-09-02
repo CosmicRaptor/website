@@ -15,6 +15,8 @@ class _SocialsButtonsState extends State<SocialsButtons> {
   bool isHovering = false;
   @override
   Widget build(BuildContext context) {
+    final double screenwidth = MediaQuery.of(context).size.width;
+    final double screenheight = MediaQuery.of(context).size.height;
     return SizedBox(
       width: screenwidth! * 0.2,
       child: InkWell(
