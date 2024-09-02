@@ -29,11 +29,11 @@ class _LandingPageState extends State<LandingPage> {
             padding: const EdgeInsets.symmetric(vertical: 50),
             child: ListView(
               padding: EdgeInsets.zero,
-              children: [
-                const PageWidget(buttonText: "Home"),
-                const PageWidget(buttonText: "Projects"),
-                const PageWidget(buttonText: "Socials"),
-                const PageWidget(buttonText: "Photos"),
+              children: const [
+                PageWidget(buttonText: "Home"),
+                PageWidget(buttonText: "Projects"),
+                PageWidget(buttonText: "Socials"),
+                PageWidget(buttonText: "Photos"),
               ],
             ),
           ),
@@ -43,7 +43,7 @@ class _LandingPageState extends State<LandingPage> {
         backgroundColor: Colors.black,
         leading: isMobile ? Builder(
           builder: (context) => IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ) : null,
@@ -92,9 +92,9 @@ class _LandingPageState extends State<LandingPage> {
                               )),
                             ),
                             SizedBox(height: screenheight * 0.05,),
-                            SizedBox(
+                            const SizedBox(
                               //width: screenwidth * 0.8,
-                              child: const Text("Demystifying the wonders of Linux!  I'm passionate about making Linux accessible and fun for everyone. I'm a Flutter developer and DevOps enthusiast who thrives in collaborative environments. Whether you're building the next big app or just tinkering with Linux, I'm always down to chat, code, troubleshoot issues, and maybe even swap some photography tips along the way.  Let's explore the world of tech and creativity together!",
+                              child: Text("Demystifying the wonders of Linux!  I'm passionate about making Linux accessible and fun for everyone. I'm a Flutter developer and DevOps enthusiast who thrives in collaborative environments. Whether you're building the next big app or just tinkering with Linux, I'm always down to chat, code, troubleshoot issues, and maybe even swap some photography tips along the way.  Let's explore the world of tech and creativity together!",
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontFamily: 'Jetbrains-Mono',
@@ -102,10 +102,10 @@ class _LandingPageState extends State<LandingPage> {
                                 ),),
                             ),
                             SizedBox(height: screenheight * 0.05,),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Text("Made with ♥️ using Flutter", style: TextStyle(
+                                Text("Made with ♥️ using Flutter", style: TextStyle(
                                   fontFamily: "Jetbrains-Mono",
                                   color: Colors.white38,
                                   fontSize: 15,
@@ -126,26 +126,4 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget _buildDrawerItem(IconData icon, String title, bool isHovering, VoidCallback onTap) {
-    return InkWell(
-      onTap: onTap,
-      onHover: (hover) {
-        setState(() {
-          isHovering = hover;
-        });
-      },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.ease,
-        padding: EdgeInsets.all(isHovering ? 30 : 20),
-        decoration: BoxDecoration(
-          color: isHovering ? Colors.blue.withOpacity(0.1) : Colors.transparent,
-        ),
-        child: ListTile(
-          leading: Icon(icon, color: Colors.blue),
-          title: Text(title, style: TextStyle(color: Colors.blue)),
-        ),
-      ),
-    );
-  }
 }
