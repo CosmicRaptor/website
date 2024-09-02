@@ -12,6 +12,9 @@ class PhotosPage extends StatefulWidget {
 
 class _PhotosPageState extends State<PhotosPage> {
   final _images = const [
+    ImagePane(fileName: 'assets/images/IMG_1535.jpg'),
+    ImagePane(fileName: 'assets/images/IMG_1539.jpg'),
+    ImagePane(fileName: 'assets/images/IMG_1541.jpg'),
     ImagePane(fileName: 'assets/images/20221023081459_IMG_0712.JPG'),
     ImagePane(fileName: 'assets/images/IMG_0738.JPG'),
     ImagePane(fileName: 'assets/images/IMG_0740.JPG'),
