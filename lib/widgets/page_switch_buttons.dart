@@ -15,8 +15,8 @@ class _PageWidgetState extends State<PageWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => null,
-      onHover: (hovering){
+      onTap: () {},
+      onHover: (hovering) {
         setState(() {
           isHovering4 = hovering;
         });
@@ -27,13 +27,22 @@ class _PageWidgetState extends State<PageWidget> {
         padding: EdgeInsets.all(isHovering4 ? 15 : 10),
         decoration: BoxDecoration(
             color: isHovering4 ? Colors.white24 : Colors.black,
-            borderRadius: BorderRadius.circular(15)
+            borderRadius: BorderRadius.circular(15)),
+        child: TextButton(
+          onPressed: () {
+            context.go(getRoute(widget.buttonText));
+          },
+          style: TextButton.styleFrom(
+              textStyle: const TextStyle(color: Colors.white)),
+          child: Text(
+            widget.buttonText,
+            style: const TextStyle(
+              fontFamily: 'Jetbrains-Mono',
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
         ),
-        child: TextButton(onPressed: (){context.go(getRoute(widget.buttonText));}, style: TextButton.styleFrom(textStyle: const TextStyle(color: Colors.white)), child: Text(widget.buttonText, style: const TextStyle(
-          fontFamily: 'Jetbrains-Mono',
-          fontSize: 20,
-          color: Colors.white,
-        ),),),
       ),
     );
   }

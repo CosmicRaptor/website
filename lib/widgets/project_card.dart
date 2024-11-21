@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:website/main.dart';
 
 class ProjectCard extends StatefulWidget {
-
   final String title, description, url;
-  const ProjectCard({super.key, required this.title, required this.description, required this.url});
+  const ProjectCard(
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.url});
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
 }
 
 class _ProjectCardState extends State<ProjectCard> {
-
   bool isHovering = false;
 
   @override
   Widget build(BuildContext context) {
-    final double screenwidth = MediaQuery.of(context).size.width;
+    // final double screenwidth = MediaQuery.of(context).size.width;
     final double screenheight = MediaQuery.of(context).size.height;
-    final double width = screenwidth! * 0.2;
+    // final double width = screenwidth * 0.2;
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: (){launchUrl(Uri.parse(widget.url));},
-        onHover: (hover){
+        onTap: () {
+          launchUrl(Uri.parse(widget.url));
+        },
+        onHover: (hover) {
           setState(() {
             isHovering = hover;
           });
@@ -36,15 +39,11 @@ class _ProjectCardState extends State<ProjectCard> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
-                color: isHovering ? const Color.fromRGBO(0, 255, 0, 1.0) : Colors.black,
+                color: isHovering
+                    ? const Color.fromRGBO(0, 255, 0, 1.0)
+                    : Colors.black,
               ),
-              boxShadow: const [
-                BoxShadow(
-                    blurRadius: 5,
-                    spreadRadius: 10
-                )
-              ]
-          ),
+              boxShadow: const [BoxShadow(blurRadius: 5, spreadRadius: 10)]),
           child: Card(
             color: Colors.white10,
             child: Padding(
@@ -52,18 +51,27 @@ class _ProjectCardState extends State<ProjectCard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(widget.title, style: const TextStyle(
-                    fontFamily: 'Jetbrains-Mono',
-                    fontSize: 25,
-                    color: Colors.white
-                  ),),
-                  SizedBox(height: screenheight! * 0.05,),
-                  Text(widget.description, style: const TextStyle(
-                    fontFamily: 'Jetbrains-Mono',
-                    fontSize: 15,
-                    color: Colors.white60,
-                  ),),
-                  SizedBox(height: screenheight! * 0.05,),
+                  Text(
+                    widget.title,
+                    style: const TextStyle(
+                        fontFamily: 'Jetbrains-Mono',
+                        fontSize: 25,
+                        color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: screenheight * 0.05,
+                  ),
+                  Text(
+                    widget.description,
+                    style: const TextStyle(
+                      fontFamily: 'Jetbrains-Mono',
+                      fontSize: 15,
+                      color: Colors.white60,
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenheight * 0.05,
+                  ),
                 ],
               ),
             ),

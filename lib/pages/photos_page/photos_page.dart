@@ -44,32 +44,32 @@ class _PhotosPageState extends State<PhotosPage> {
           backgroundColor: Colors.black,
           drawer: isMobile
               ? Drawer(
-            child: Container(
-              color: Colors.black,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: const [
-                    PageWidget(buttonText: "Home"),
-                    PageWidget(buttonText: "Projects"),
-                    PageWidget(buttonText: "Socials"),
-                    PageWidget(buttonText: "Photos"),
-                  ],
-                ),
-              ),
-            ),
-          )
+                  child: Container(
+                    color: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 50),
+                      child: ListView(
+                        padding: EdgeInsets.zero,
+                        children: const [
+                          PageWidget(buttonText: "Home"),
+                          PageWidget(buttonText: "Projects"),
+                          PageWidget(buttonText: "Socials"),
+                          PageWidget(buttonText: "Photos"),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
               : null,
           appBar: AppBar(
             backgroundColor: Colors.black,
             leading: isMobile
                 ? Builder(
-              builder: (context) => IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () => Scaffold.of(context).openDrawer(),
-              ),
-            )
+                    builder: (context) => IconButton(
+                      icon: const Icon(Icons.menu),
+                      onPressed: () => Scaffold.of(context).openDrawer(),
+                    ),
+                  )
                 : null,
           ),
           body: Padding(

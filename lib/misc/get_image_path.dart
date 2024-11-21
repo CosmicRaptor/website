@@ -1,6 +1,5 @@
-
-String getImagePath(String inputText){
-  switch(inputText){
+String getImagePath(String inputText) {
+  switch (inputText) {
     case "Discord":
       return "assets/discord.png";
     case "Steam":

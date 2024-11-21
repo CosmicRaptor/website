@@ -22,31 +22,35 @@ class _LandingPageState extends State<LandingPage> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      drawer: isMobile ? Drawer(
-        child: Container(
-          color: Colors.black,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50),
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: const [
-                PageWidget(buttonText: "Home"),
-                PageWidget(buttonText: "Projects"),
-                PageWidget(buttonText: "Socials"),
-                PageWidget(buttonText: "Photos"),
-              ],
-            ),
-          ),
-        ),
-      ) : null,
+      drawer: isMobile
+          ? Drawer(
+              child: Container(
+                color: Colors.black,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 50),
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: const [
+                      PageWidget(buttonText: "Home"),
+                      PageWidget(buttonText: "Projects"),
+                      PageWidget(buttonText: "Socials"),
+                      PageWidget(buttonText: "Photos"),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : null,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: isMobile ? Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
-        ) : null,
+        leading: isMobile
+            ? Builder(
+                builder: (context) => IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
+              )
+            : null,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -60,7 +64,9 @@ class _LandingPageState extends State<LandingPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: screenheight * 0.01,),
+                    SizedBox(
+                      height: screenheight * 0.01,
+                    ),
                     const PageWidget(buttonText: "Home"),
                     const PageWidget(buttonText: "Projects"),
                     const PageWidget(buttonText: "Socials"),
@@ -79,37 +85,48 @@ class _LandingPageState extends State<LandingPage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text("Hey there! Welcome to my creative corner", style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 40,
-                                fontFamily: 'Jetbrains-Mono'
-                            ),),
-                            const Center(
-                              child: Text("Just a silly site.", style: TextStyle(
-                                  color: Colors.white38,
-                                  fontFamily: 'Jetbrains-Mono',
-                                  fontSize: 25
-                              )),
+                            const Text(
+                              "Hey there! Welcome to my creative corner",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 40,
+                                  fontFamily: 'Jetbrains-Mono'),
                             ),
-                            SizedBox(height: screenheight * 0.05,),
+                            const Center(
+                              child: Text("Just a silly site.",
+                                  style: TextStyle(
+                                      color: Colors.white38,
+                                      fontFamily: 'Jetbrains-Mono',
+                                      fontSize: 25)),
+                            ),
+                            SizedBox(
+                              height: screenheight * 0.05,
+                            ),
                             const SizedBox(
                               //width: screenwidth * 0.8,
-                              child: Text("Demystifying the wonders of Linux!  I'm passionate about making Linux accessible and fun for everyone. I'm a Flutter developer and DevOps enthusiast who thrives in collaborative environments. Whether you're building the next big app or just tinkering with Linux, I'm always down to chat, code, troubleshoot issues, and maybe even swap some photography tips along the way.  Let's explore the world of tech and creativity together!",
+                              child: Text(
+                                "Demystifying the wonders of Linux!  I'm passionate about making Linux accessible and fun for everyone. I'm a Flutter developer and DevOps enthusiast who thrives in collaborative environments. Whether you're building the next big app or just tinkering with Linux, I'm always down to chat, code, troubleshoot issues, and maybe even swap some photography tips along the way.  Let's explore the world of tech and creativity together!",
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontFamily: 'Jetbrains-Mono',
                                   fontSize: 15,
-                                ),),
+                                ),
+                              ),
                             ),
-                            SizedBox(height: screenheight * 0.05,),
+                            SizedBox(
+                              height: screenheight * 0.05,
+                            ),
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("Made with ♥️ using Flutter", style: TextStyle(
-                                  fontFamily: "Jetbrains-Mono",
-                                  color: Colors.white38,
-                                  fontSize: 15,
-                                ),),
+                                Text(
+                                  "Made with ♥️ using Flutter",
+                                  style: TextStyle(
+                                    fontFamily: "Jetbrains-Mono",
+                                    color: Colors.white38,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ],
                             )
                           ],
@@ -125,5 +142,4 @@ class _LandingPageState extends State<LandingPage> {
       ),
     );
   }
-
 }

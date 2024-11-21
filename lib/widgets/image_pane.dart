@@ -8,7 +8,10 @@ class ImagePane extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
-      child: Image.asset(fileName, fit: BoxFit.fill,),
+      child: Image.asset(
+        fileName,
+        fit: BoxFit.fill,
+      ),
     );
   }
 }

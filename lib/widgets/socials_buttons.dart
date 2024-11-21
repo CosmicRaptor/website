@@ -18,7 +18,7 @@ class _SocialsButtonsState extends State<SocialsButtons> {
     return LayoutBuilder(
       builder: (context, constraints) {
         final double screenwidth = constraints.maxWidth;
-       // final double screenheight = constraints.maxHeight;
+        // final double screenheight = constraints.maxHeight;
         bool isMobile = screenwidth < 600;
 
         return SizedBox(
@@ -39,7 +39,9 @@ class _SocialsButtonsState extends State<SocialsButtons> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(
-                  color: isHovering ? const Color.fromRGBO(0, 255, 0, 1.0) : Colors.black,
+                  color: isHovering
+                      ? const Color.fromRGBO(0, 255, 0, 1.0)
+                      : Colors.black,
                 ),
                 boxShadow: const [
                   BoxShadow(

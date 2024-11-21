@@ -1,6 +1,5 @@
-
-String getRoute(String inputText){
-  switch(inputText) {
+String getRoute(String inputText) {
+  switch (inputText) {
     case "Home":
       return "/";
     case "Photos":
