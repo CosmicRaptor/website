@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -62,7 +63,8 @@ class _LandingPageState extends State<LandingPage>
           IconButton(
             color: Colors.grey,
             onPressed: () {
-              // Navigator.pushNamed(context, '/projects');
+              //go router push to index
+              context.go('/index');
             },
             icon: const Icon(Icons.menu),
           ),
