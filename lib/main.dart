@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router,
-      title: 'Website',
+      title: 'Cosmicraptor\'s Website ',
       debugShowCheckedModeBanner: false,
     );
   }
