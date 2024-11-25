@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github/github.dart';
 import 'package:go_router/go_router.dart';
 
 class LandingPage extends StatefulWidget {
@@ -19,6 +20,10 @@ class _LandingPageState extends State<LandingPage>
   bool isFinishedTextAnimation = false;
   String buttonText = 'Destroy';
   double _opacity = 0;
+  var github = GitHub(auth: findAuthenticationFromEnvironment());
+  late Repository repo;
+  late RepositoryCommit commit;
+  bool hasLoadedGithubData = false;
 
   @override
   void initState() {
@@ -48,7 +53,22 @@ class _LandingPageState extends State<LandingPage>
         });
       }
     });
+    _loadRepositoryData();
     super.initState();
+  }
+
+  Future<void> _loadRepositoryData() async {
+    repo = await github.repositories
+        .getRepository(RepositorySlug('CosmicRaptor', 'website'));
+
+    commit = await github.repositories.getCommit(
+      RepositorySlug('CosmicRaptor', 'website'),
+      repo.defaultBranch,
+    );
+    setState(() {
+      hasLoadedGithubData = true;
+    });
+    //setState(() {});
   }
 
   @override
@@ -164,6 +184,26 @@ class _LandingPageState extends State<LandingPage>
                     ),
                   ],
                 ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black54,
+              ),
+              width: screenSize.width,
+              child: Text(
+                hasLoadedGithubData
+                    //how many days and hours ago was the last commit
+                    ? 'Latest commit: ${commit.sha!.substring(0, 7)}, ${commit.commit!.author!.date!.difference(DateTime.now()).inDays.abs()} days ago'
+                    : 'Loading...',
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
           ),
