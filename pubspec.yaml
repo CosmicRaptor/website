@@ -79,6 +79,7 @@ flutter:
     - assets/discord.png
     - assets/steam.png
     - assets/github.png
+    - assets/avatar.png
     - assets/images/
     - assets/project_pics/
 

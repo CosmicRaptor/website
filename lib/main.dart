@@ -13,6 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: 'Jetbrains-Mono',
+      ),
       title: 'Cosmicraptor\'s Website ',
       debugShowCheckedModeBanner: false,
     );

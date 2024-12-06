@@ -140,6 +140,7 @@ class _LandingPageState extends State<LandingPage>
                             style: const TextStyle(
                               color: Colors.grey,
                               fontSize: 30,
+                              fontFamily: 'Jetbrains-Mono',
                             ),
                             text: _text.substring(
                                 0, _textAnimation.value.toInt()),
