@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:website/pages/index_page/index_page_containers.dart';
 
+import '../../misc/page_state.dart';
+
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
 
@@ -21,7 +23,7 @@ class _IndexPageState extends State<IndexPage> {
           //icon button to close
           IconButton(
             onPressed: () {
-              context.go('/');
+              context.go('/${PageState.previousPage}');
             },
             icon: const Icon(
               Icons.close,

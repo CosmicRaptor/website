@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:website/pages/about_page/about_page.dart';
 import 'package:website/pages/index_page/index_page.dart';
 import 'package:website/pages/landing%20page/landing_page.dart';
 import 'package:website/pages/projects_page/projects_page.dart';
@@ -9,6 +10,7 @@ final GoRouter router = GoRouter(routes: [
   GoRoute(path: '/', builder: (context, state) => const LandingPage()),
   GoRoute(path: '/projects', builder: (context, state) => const ProjectsPage()),
   GoRoute(path: '/socials', builder: (context, state) => const SocialsPage()),
+  GoRoute(path: '/about', builder: (context, state) => const AboutPage()),
   GoRoute(
       path: '/index',
       builder: (context, state) => const IndexPage(),

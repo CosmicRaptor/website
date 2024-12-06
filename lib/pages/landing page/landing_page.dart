@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github/github.dart';
 import 'package:go_router/go_router.dart';
+import 'package:website/misc/page_state.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -91,6 +92,7 @@ class _LandingPageState extends State<LandingPage>
             color: Colors.grey,
             onPressed: () {
               //go router push to index
+              PageState.previousPage = '';
               context.go('/index');
             },
             icon: const Icon(Icons.menu),

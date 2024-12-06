@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:website/misc/page_state.dart';
 import 'package:website/widgets/project_card.dart';
 
 class ProjectsPage extends StatefulWidget {
@@ -52,6 +53,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
           IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
+              PageState.previousPage = 'projects';
               context.go('/index');
             },
           )

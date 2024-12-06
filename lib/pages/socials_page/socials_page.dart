@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:website/widgets/socials_buttons.dart';
 
+import '../../misc/page_state.dart';
+
 class SocialsPage extends StatelessWidget {
   const SocialsPage({super.key});
 
@@ -30,6 +32,7 @@ class SocialsPage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
+              PageState.previousPage = 'socials';
               context.go('/index');
             },
           )
