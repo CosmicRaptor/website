@@ -68,9 +68,9 @@ class _ProjectCardState extends State<ProjectCard> {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           width: double.infinity,
-                          height: screenheight * 0.1,
+                          height: screenheight * 0.12,
                           color: Colors.black.withOpacity(0.7),
-                          padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(8),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -89,6 +89,8 @@ class _ProjectCardState extends State<ProjectCard> {
                                   color: Colors.white,
                                   fontSize: 15,
                                 ),
+                                maxLines: 2,
+                                softWrap: true,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ],
