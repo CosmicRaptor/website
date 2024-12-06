@@ -57,6 +57,13 @@ class _LandingPageState extends State<LandingPage>
     super.initState();
   }
 
+  @override
+  void dispose() {
+    controller.dispose();
+    _bannerController.dispose();
+    super.dispose();
+  }
+
   Future<void> _loadRepositoryData() async {
     repo = await github.repositories
         .getRepository(RepositorySlug('CosmicRaptor', 'website'));

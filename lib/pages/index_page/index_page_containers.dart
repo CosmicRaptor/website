@@ -16,6 +16,7 @@ class _IndexPageContainersState extends State<IndexPageContainers> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      splashColor: Colors.transparent,
       onTap: () {
         context.go('/${widget.routeToPush}');
       },
