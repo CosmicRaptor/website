@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:website/misc/get_image_path.dart';
+import 'package:website/misc/get_route.dart';
 import 'package:website/misc/open_url.dart';
 
 class SocialsButtons extends StatefulWidget {
@@ -52,11 +52,7 @@ class _SocialsButtonsState extends State<SocialsButtons> {
               ),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.black,
-                    radius: 25,
-                    child: Image.asset(getImagePath(widget.buttonText)),
-                  ),
+                  getButton(widget.buttonText),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(

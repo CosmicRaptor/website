@@ -11,6 +11,10 @@ void openUrl(String serviceName) {
       break;
     case "GitHub":
       launchUrl(Uri.parse("https://github.com/CosmicRaptor"));
+    case "LinkedIn":
+      launchUrl(Uri.parse("https://www.linkedin.com/in/aryan-pathak-67a39b290"));
+    case "Email":
+      launchUrl(Uri.parse("mailto:aryanpathak130516@tsecol.onmicrosoft.com"));
       break;
   }
 }
